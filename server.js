@@ -13,7 +13,7 @@ app.use(cors())
 
 
 app.get('/', (req, res) => {
-    registers.getAll(req.token)
+    registers.getAll()
       .then(
           (data) => res.send(data),
           (error) => {
