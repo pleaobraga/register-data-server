@@ -17,4 +17,5 @@ The following endpoints are available:
 | Endpoints       | Usage          | Params         |
 |-----------------|----------------|----------------|
 | `GET /` | Get all registers |  |
-| `POST /` | Add a new register | |
+| `POST /` | Add a new register | **body** - [String] | 
+| `POST /check-email` | check if email has already been registered | **email** - [String] |

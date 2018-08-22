@@ -23,6 +23,16 @@ function emailIsRegistered (registers, email) {
 
 }
 
+
+function checkEmail(email, token = 'aubay') {
+  return new Promise((res) => {
+
+    let registers = getData(token)
+
+    res(emailIsRegistered(registers, email))
+  })
+}
+
 function getAll (token = 'aubay') {
   return new Promise((res) => {
     const registers = getData(token)
@@ -35,10 +45,6 @@ function saveNewRegister  (token = 'aubay', data) {
   return new Promise((res) => {
 
     let registers = getData(token)
-
-    console.log(data)
-    console.log(registers)
-    console.log( data.email)
 
     if(!emailIsRegistered(registers, data.email)) {
 
@@ -61,5 +67,6 @@ function saveNewRegister  (token = 'aubay', data) {
 
 module.exports = {
   getAll,
-  saveNewRegister
+  saveNewRegister,
+  checkEmail
 }

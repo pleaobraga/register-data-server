@@ -25,6 +25,17 @@ app.get('/', (req, res) => {
       )
 })
 
+app.post('/check-email', bodyParser.json(), (req, res) => {    
+    registers.checkEmail(req.body.email)
+    .then(
+        (data) => res.send(data),
+        (error) => {
+            res.status(500).send({
+                error: 'There was an error.'
+        })
+    })  
+})
+
 app.post('/', bodyParser.json(), (req, res) => {    
     registers.saveNewRegister(req.token, req.body)
     .then(
