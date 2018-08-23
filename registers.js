@@ -57,7 +57,7 @@ function saveNewRegister  (token = 'aubay', data) {
 
       registers.push(newRegister)
 
-      res("register added successfully")
+      res("Registro adicionado com sucesso")
 
     } else {
       throw new Error("402")
@@ -68,5 +68,6 @@ function saveNewRegister  (token = 'aubay', data) {
 module.exports = {
   getAll,
   saveNewRegister,
-  checkEmail
+  checkEmail,
+  resetDataBase
 }

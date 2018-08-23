@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
           (error) => {
               console.error(error)
               res.status(500).send({
-                 error: 'There was an error.'
+                 error: 'Existe um erro.'
           })
         }
       )
@@ -31,7 +31,7 @@ app.post('/check-email', bodyParser.json(), (req, res) => {
         (data) => res.send(data),
         (error) => {
             res.status(500).send({
-                error: 'There was an error.'
+                error: 'Existe um erro.'
         })
     })  
 })
@@ -43,11 +43,11 @@ app.post('/', bodyParser.json(), (req, res) => {
         (error) => {
             if(error.message == "402") {
                 res.status(402).send({
-                    error: 'Email already registered'
+                    error: 'Email Já registrado'
                 })
             } else {
                 res.status(500).send({
-                    error: 'There was an error.'
+                    error: 'Existe um erro.'
                 })
             }
     })  
