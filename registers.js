@@ -68,6 +68,5 @@ function saveNewRegister  (token = 'aubay', data) {
 module.exports = {
   getAll,
   saveNewRegister,
-  checkEmail,
-  resetDataBase
+  checkEmail
 }
